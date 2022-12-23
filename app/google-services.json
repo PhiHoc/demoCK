@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "189099286742",
+    "project_id": "demock-4322c",
+    "storage_bucket": "demock-4322c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189099286742:android:29471f2629cf4e92406977",
+        "android_client_info": {
+          "package_name": "com.example.demock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189099286742-8ciajiegkauhsqjhtdloeav5ch75l8bv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCENOk93BhIFwbWgqohcsqiuid4gBVVWBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189099286742-8ciajiegkauhsqjhtdloeav5ch75l8bv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

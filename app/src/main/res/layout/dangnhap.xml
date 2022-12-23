@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_tooth"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
+        android:src="@drawable/icon_tooth" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text="C L I N I C"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/txt_name2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="----Dental----"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:id="@+id/layout_tk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_sdt"
+            android:layout_width="130dp"
+            android:layout_height="53dp"
+            android:layout_margin="10dp"
+            android:text="Số điện thoại:"
+            android:textSize="20dp" />
+        <EditText
+            android:id="@+id/ed_sdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/custom_editext"
+            android:drawablePadding="15dp"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:imeOptions="actionNext"
+            android:maxLength="100"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_pw"
+            android:layout_width="130dp"
+            android:layout_height="53dp"
+            android:layout_margin="10dp"
+            android:text="Mật khẩu:"
+            android:textSize="20dp" />
+        <EditText
+            android:id="@+id/ed_pw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/custom_editext"
+            android:drawablePadding="15dp"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:imeOptions="actionDone"
+            android:maxLength="100"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="150dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_dn"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:text="Đăng nhập"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btn_dk"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Đăng ký"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

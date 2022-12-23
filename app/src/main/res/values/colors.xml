@@ -8,6 +8,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFEB3B</color>
+    <color name="pink">#F4BBBB</color>
+    <color name="yellow_x">#F1E1A6</color>
+    <color name="grey">#CEB8B8B8</color>
+    <color name="green_x">#97DBAE</color>
+    <color name="pink_pastel">#EA9CF3</color>
+    <color name="pastel1">#8FE686</color>
+    <color name="pastel2">#5CC8EA</color>
+    <color name="pastel3">#FFBE8D</color>
+    <color name="pastel4">#CCA1F1</color>
+    <color name="pastel5">#7B7DF8</color>
     <color name="gray">#666666</color>
     <color name="background">#0E81D1</color>
+
 </resources>
