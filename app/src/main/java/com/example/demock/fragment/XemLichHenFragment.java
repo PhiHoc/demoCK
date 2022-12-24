@@ -1,5 +1,7 @@
 package com.example.demock.fragment;
 
+import static com.example.demock.Common.Utilities.formatDateTime;
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -170,7 +172,7 @@ public class XemLichHenFragment extends Fragment {
                 lichHen.setTen(tenMoi);
 
                 String lichHenMoi = etLichHenMoi.getText().toString().trim();
-                lichHen.setLichHen(lichHenMoi);
+                lichHen.setLichHen(formatDateTime(lichHenMoi));
 
                 myRef.child(String.valueOf(lichHen.getSdt())).updateChildren(lichHen.toMap(), new DatabaseReference.CompletionListener() {
                     @Override

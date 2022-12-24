@@ -44,9 +44,9 @@ public class LichHenAdapter extends RecyclerView.Adapter<LichHenAdapter.LichHenV
             return;
         }
 
-        holder.tvSdt.setText("ID: " + lichHen.getSdt());
+        holder.tvSdt.setText("Sđt: " + lichHen.getSdt());
         holder.tvTen.setText("Tên: " + lichHen.getTen());
-        holder.tvLichHen.setText("Sđt: " + lichHen.getLichHen());
+        holder.tvLichHen.setText("Thời gian: " + lichHen.getLichHen());
 
         holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

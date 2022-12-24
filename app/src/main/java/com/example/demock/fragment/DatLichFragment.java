@@ -1,5 +1,8 @@
 package com.example.demock.fragment;
 
+import static com.example.demock.Common.Utilities.formatDateTime;
+import static com.example.demock.Common.Utilities.isDateValid;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,11 +20,14 @@ import com.example.demock.Admin.LichHen;
 import com.example.demock.Admin.LichHenActivity;
 import com.example.demock.Common.Common;
 import com.example.demock.R;
+import com.example.demock.SignUpActivity;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -109,28 +115,32 @@ public class DatLichFragment extends Fragment {
         }
     }
 
-    public static boolean isDateValid(String date)
-    {
-        try {
-            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     private void onClickPushData(LichHen lichHen) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("ds_lichhen");
-
-        String pathObject = String.valueOf(lichHen.getSdt());
-        myRef.child(pathObject).setValue(lichHen, new DatabaseReference.CompletionListener() {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("ds_lichhen");
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                Toast.makeText(getActivity(), "Thêm lịch hẹn thành công", Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pathObject = formatDateTime(lichHen.getLichHen());
+                //Kiểm tra lịch hẹn tồn tại chưa
+                if(snapshot.child(pathObject).exists()){
+                    Toast.makeText(getActivity(),"Lịch hẹn đã bị trùng hãy thay đổi thời gian!",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    myRef.child(pathObject).setValue(lichHen, new DatabaseReference.CompletionListener() {
+                        @Override
+                        public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                            Toast.makeText(getActivity(), "Thêm lịch hẹn thành công", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
+
     }
 }

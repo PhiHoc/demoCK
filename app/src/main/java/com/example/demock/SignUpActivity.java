@@ -1,6 +1,7 @@
 package com.example.demock;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -116,13 +117,17 @@ public class SignUpActivity extends AppCompatActivity {
                         //get gender text
                         String gender = selectedRadioButton.getText().toString();
                         User user = new User(name,password,gender,addr,"false",bday);
-                        table_user.child(phone).setValue(user);
-                        Toast.makeText(SignUpActivity.this,"Đăng kí thành công!",Toast.LENGTH_SHORT).show();
-                        Common.currentUser = user;
-                        Common.currentUserPhone = phone;
-                        Intent home = new Intent(SignUpActivity.this,MainActivity.class);
-                        startActivity(home);
-                        finish();
+                        table_user.child(phone).setValue(user, new DatabaseReference.CompletionListener() {
+                            @Override
+                            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                                Toast.makeText(SignUpActivity.this,"Đăng kí thành công!",Toast.LENGTH_SHORT).show();
+                                Common.currentUser = user;
+                                Common.currentUserPhone = phone;
+                                Intent home = new Intent(SignUpActivity.this,MainActivity.class);
+                                startActivity(home);
+                                finish();
+                            }
+                        });
                     }
                 }
 

@@ -1,5 +1,7 @@
 package com.example.demock.Admin;
 
+import static com.example.demock.Common.Utilities.formatDateTime;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -26,6 +28,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,18 +107,36 @@ public class LichHenActivity extends AppCompatActivity {
         rvLichHen.setAdapter(mLichHenAdapter);
     }
 
-    private void onClickPushData(LichHen lichHen) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("ds_lichhen");
 
-        String pathObject = String.valueOf(lichHen.getSdt());
-        myRef.child(pathObject).setValue(lichHen, new DatabaseReference.CompletionListener() {
+    private void onClickPushData(LichHen lichHen) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference("ds_lichhen");
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
-                Toast.makeText(LichHenActivity.this, "Thêm lịch hẹn thành công", Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String pathObject = formatDateTime(lichHen.getLichHen());
+                //Kiểm tra lịch hẹn tồn tại chưa
+                if(snapshot.child(pathObject).exists()){
+                    Toast.makeText(LichHenActivity.this,"Lịch hẹn đã bị trùng hãy thay đổi thời gian!",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    myRef.child(pathObject).setValue(lichHen, new DatabaseReference.CompletionListener() {
+                        @Override
+                        public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                            Toast.makeText(LichHenActivity.this, "Thêm lịch hẹn thành công", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
+
     }
+
 
     private void getListLichHenFromDb() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -232,7 +253,7 @@ public class LichHenActivity extends AppCompatActivity {
                 lichHen.setTen(tenMoi);
 
                 String lichHenMoi = etLichHenMoi.getText().toString().trim();
-                lichHen.setLichHen(lichHenMoi);
+                lichHen.setLichHen(formatDateTime(lichHenMoi));
 
                 myRef.child(String.valueOf(lichHen.getSdt())).updateChildren(lichHen.toMap(), new DatabaseReference.CompletionListener() {
                     @Override
