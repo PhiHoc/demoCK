@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:id="@+id/container_doimatkhau">
 
     <TextView
         android:id="@+id/tvTitleDoiMatKhau"
@@ -40,7 +41,8 @@
             android:hint="Mật khẩu hiện tại"
             android:textColor="@android:color/background_dark"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="textPassword"/>
 
     </LinearLayout>
 
@@ -67,7 +69,8 @@
             android:hint="Mật khẩu mới"
             android:textColor="@android:color/background_dark"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="textPassword"/>
 
     </LinearLayout>
 
@@ -91,10 +94,11 @@
             android:id="@+id/etMatKhauXacNhan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Mật khẩu xác nhận"
+            android:hint="Xác nhận mật khẩu"
             android:textColor="@android:color/background_dark"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:inputType="textPassword"/>
 
     </LinearLayout>
 
@@ -117,7 +121,7 @@
             android:textSize="16sp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnHuy"
+            android:id="@+id/btnHuyMK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

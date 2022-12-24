@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/Txtdangky"
         android:layout_width="wrap_content"
-        android:layout_height="87dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif"
@@ -38,7 +38,8 @@
             android:background="@drawable/custom_editext"
             android:drawablePadding="15dp"
             android:padding="10dp"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:inputType="text"/>
     </LinearLayout>
 
     <LinearLayout
@@ -48,22 +49,104 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txt_email"
+            android:id="@+id/txt_sdt"
             android:layout_width="130dp"
             android:layout_height="53dp"
             android:layout_margin="10dp"
-            android:text="Email:"
+            android:text="Số điện thoại:"
             android:textSize="15dp" />
         <EditText
-            android:id="@+id/ed_email"
+            android:id="@+id/ed_sdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/custom_editext"
             android:drawablePadding="15dp"
-            android:inputType="textEmailAddress"
+            android:inputType="phone"
             android:padding="10dp"
             android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_bday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_bday"
+            android:layout_width="129dp"
+            android:layout_height="53dp"
+            android:layout_margin="10dp"
+            android:text="Ngày sinh"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/ed_bday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/custom_editext"
+            android:drawablePadding="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:inputType="date"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="129dp"
+            android:layout_height="53dp"
+            android:layout_margin="10dp"
+            android:text="Địa chỉ"
+            android:textSize="15dp" />
+        <EditText
+            android:id="@+id/ed_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:background="@drawable/custom_editext"
+            android:drawablePadding="15dp"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:inputType="text"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_gender"
+            android:layout_width="129dp"
+            android:layout_height="53dp"
+            android:layout_margin="10dp"
+            android:text="Giới tính"
+            android:textSize="15dp" />
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <RadioButton
+                android:id="@+id/maleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam" />
+
+            <RadioButton
+                android:id="@+id/femaleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ" />
+        </RadioGroup>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layout_pw"
@@ -89,6 +172,7 @@
             android:padding="10dp"
             android:textSize="15dp" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/layout_xnpw"
@@ -116,7 +200,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="147dp"
+        android:layout_height="120dp"
         android:layout_marginBottom="150dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -126,7 +210,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:text="Đăng ký"
             android:textSize="15sp" />
@@ -136,7 +220,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="5dp"
             android:text="Quay lại"
             android:textSize="15sp" />
     </LinearLayout>

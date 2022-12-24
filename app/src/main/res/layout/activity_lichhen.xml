@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Admin.LichHenActivity">
+
+    <TextView
+        android:id="@+id/tvTitleThemLichHen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Quản lý Lịch Hẹn"
+        android:textColor="@android:color/background_dark"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleThemLichHen"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="id" />
+
+    <EditText
+        android:id="@+id/etTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etId"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Tên" />
+
+    <EditText
+        android:id="@+id/etLichHen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etTen"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:inputType="datetime"
+        android:hint="Lịch hẹn" />
+
+    <LinearLayout
+        android:id="@+id/llLichHen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etLichHen"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnThemLichHen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Thêm Lịch Hẹn" />
+
+        <Button
+            android:id="@+id/btnTroLai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Trở lại" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLichHen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llLichHen"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

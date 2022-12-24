@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.demock.fragment.HoSoFragment;
@@ -28,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
         viewPager = findViewById(R.id.view_pager);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
 
         setUpViewPager();
 

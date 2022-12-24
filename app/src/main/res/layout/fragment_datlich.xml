@@ -122,15 +122,25 @@
 
     </com.google.android.material.chip.ChipGroup>
 
-    <TextView
-        android:id="@+id/date_view"
+    <Button
+        android:id="@+id/btn_datlich"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/cgGio"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="20dp"
-        android:text="Set the Date"
-        android:textColor="@android:color/background_dark"
+        android:text="Đặt lịch"
+        android:textColor="@android:color/white"
         android:textStyle="bold" />
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_datlich"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Hoặc liên hệ số điện thoại 090.xxx.xx để đặt lịch trực tiếp với bác sĩ"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
 </RelativeLayout>

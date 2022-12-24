@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".Admin.BenhNhanActivity">
+
+    <TextView
+        android:id="@+id/tvTitleThemBenhNhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Quản lý Bệnh Nhân"
+        android:textColor="@android:color/background_dark"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleThemBenhNhan"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="id" />
+
+    <EditText
+        android:id="@+id/etTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etId"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Tên" />
+
+    <EditText
+        android:id="@+id/etSdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etTen"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Sđt" />
+
+    <LinearLayout
+        android:id="@+id/llBenhNhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSdt"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnThemBenhNhan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Thêm Bệnh Nhân" />
+
+        <Button
+            android:id="@+id/btnTroLai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Trở lại" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBenhNhan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llBenhNhan"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

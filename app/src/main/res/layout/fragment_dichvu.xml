@@ -72,11 +72,7 @@
                 android:layout_weight="1"
                 android:text="Giá niêm yết" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Giá khuyến mãi" />
+
 
         </TableRow>
 
@@ -102,11 +98,6 @@
                 android:layout_weight="1"
                 android:text="Miễn Phí" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Miễn Phí" />
         </TableRow>
 
         <TableRow
@@ -131,11 +122,6 @@
                 android:layout_weight="1"
                 android:text="200,000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="200,000" />
         </TableRow>
 
         <TableRow
@@ -160,11 +146,6 @@
                 android:layout_weight="1"
                 android:text="1,800,000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="1,500,000" />
         </TableRow>
 
 
