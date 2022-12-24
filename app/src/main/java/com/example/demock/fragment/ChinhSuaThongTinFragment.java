@@ -48,7 +48,7 @@ public class ChinhSuaThongTinFragment extends Fragment {
         //Gán các giá trị mặc định
         etHoTen.setText(Common.currentUser.getName());
         etNgaySinh.setText(Common.currentUser.getBirthday());
-        etDiaChi.setText(Common.currentUser.getAddress());
+        etDiaChi.setText(Common.currentUser.getAddr());
         if(Common.currentUser.getGender().equals("Nam"))
         {
             maleRadioButton.setChecked(true);

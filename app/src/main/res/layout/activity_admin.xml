@@ -157,7 +157,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardLich"
+            android:id="@+id/cardThoat"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_row="1"

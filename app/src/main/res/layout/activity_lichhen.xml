@@ -19,21 +19,25 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/etId"
+        android:id="@+id/etSdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitleThemLichHen"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:hint="id" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Số điện thoại"
+        android:inputType="phone"/>
 
     <EditText
         android:id="@+id/etTen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etId"
+        android:layout_below="@+id/etSdt"
         android:layout_margin="10dp"
         android:layout_marginTop="10dp"
+        android:inputType="text"
         android:hint="Tên" />
 
     <EditText
@@ -41,10 +45,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etTen"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:inputType="datetime"
-        android:hint="Lịch hẹn" />
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Thời gian"
+        android:inputType="datetime" />
 
     <LinearLayout
         android:id="@+id/llLichHen"

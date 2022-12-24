@@ -1,17 +1,17 @@
 package com.example.demock.Model;
 
 public class User {
-    private String name,password,gender,address, isAdmin,birthday;
+    private String name,password,gender,addr, isAdmin,birthday;
 
     public User() {
     }
 
-    public String getAddress() {
-        return address;
+    public String getAddr() {
+        return addr;
     }
 
-    public void setAddress(String address) {
-        address = address;
+    public void setAddr(String addr) {
+        this.addr = addr;
     }
 
     public String getIsAdmin() {
@@ -26,7 +26,7 @@ public class User {
         this.name = name;
         this.password = password;
         this.gender = gender;
-        this.address = address;
+        this.addr = address;
         this.isAdmin = isAdmin;
         this.birthday = birthday;
     }

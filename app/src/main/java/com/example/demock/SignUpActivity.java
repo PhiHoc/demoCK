@@ -77,11 +77,11 @@ public class SignUpActivity extends AppCompatActivity {
         String name = edtUserName.getText().toString().trim();
         String phone = edtPhone.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
-        String address = edtAddress.getText().toString().trim();
+        String addr = edtAddress.getText().toString().trim();
         String confirmPassword = edtPWConfirm.getText().toString().trim();
         String bday = edtBDay.getText().toString().trim();
 
-        if(name.equals("") || phone.equals("") || address.equals("") || bday.equals("")){
+        if(name.equals("") || phone.equals("") || addr.equals("") || bday.equals("")){
             //
             Toast.makeText(this,"Vui lòng nhập đầy đủ thông tin!",Toast.LENGTH_SHORT).show();
         }
@@ -115,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
                         selectedRadioButton  = (RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
                         //get gender text
                         String gender = selectedRadioButton.getText().toString();
-                        User user = new User(name,password,gender,address,"false",bday);
+                        User user = new User(name,password,gender,addr,"false",bday);
                         table_user.child(phone).setValue(user);
                         Toast.makeText(SignUpActivity.this,"Đăng kí thành công!",Toast.LENGTH_SHORT).show();
                         Common.currentUser = user;

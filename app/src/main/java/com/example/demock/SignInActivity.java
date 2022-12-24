@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 //import com.example.demock.Admin.AdminActivity;
+import com.example.demock.Admin.AdminActivity;
 import com.example.demock.Common.Common;
 import com.example.demock.Model.User;
 import com.example.demock.fragment.TrangChuFragment;
@@ -46,6 +47,7 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -81,14 +83,16 @@ public class SignInActivity extends AppCompatActivity {
                                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                                     Common.currentUser = user;
                                     Common.currentUserPhone = phone;
-//                                    if(user.getIsAdmin().equals("true")){
-//                                        Intent admin = new Intent(SignInActivity.this, AdminActivity.class);
-//                                        startActivity(admin);
-//                                    }
-//                                    else{
+
+                                    //Kiểm tra có phải admin hay không
+                                    if(user.getIsAdmin().equals("true")){
+                                        Intent admin = new Intent(SignInActivity.this, AdminActivity.class);
+                                        startActivity(admin);
+                                    }
+                                    else{
                                         Intent home = new Intent(SignInActivity.this, MainActivity.class);
                                         startActivity(home);
-//                                    }
+                                    }
                                     finish();
                                 } else {
                                     Toast.makeText(SignInActivity.this, "Sai mật khẩu! Hãy thử lại", Toast.LENGTH_SHORT).show();

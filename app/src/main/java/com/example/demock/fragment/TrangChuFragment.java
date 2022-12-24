@@ -1,14 +1,13 @@
 package com.example.demock.fragment;
 
-import static android.content.ContentValues.TAG;
-
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,68 +17,37 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.demock.Common.Common;
 import com.example.demock.R;
+import com.example.demock.SignInActivity;
 
 public class TrangChuFragment extends Fragment implements View.OnClickListener{
 
     CardView cardDichVu;
-    CardView cardLienHe;
+    CardView cardLichHen;
     CardView cardLichSu;
-    CardView cardThanhToan;
+    CardView cardThoat;
     private TextView tvName;
 
+    @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_trangchu, container, false);
         //Khởi tạo các giá trị
         cardDichVu = (CardView) view.findViewById(R.id.cardDichVu);
-        cardLienHe = (CardView) view.findViewById(R.id.cardLienHe);
+        cardLichHen = (CardView) view.findViewById(R.id.cardLichHen);
         cardLichSu = (CardView) view.findViewById(R.id.cardLichSu);
-        cardThanhToan = (CardView) view.findViewById(R.id.cardThanhToan);
+        cardThoat = (CardView) view.findViewById(R.id.cardThoat);
         tvName = view.findViewById(R.id.tvName);
         tvName.setText(Common.currentUser.getName());
 
         cardDichVu.setOnClickListener(this);
-        cardLienHe.setOnClickListener(this);
+        cardLichHen.setOnClickListener(this);
         cardLichSu.setOnClickListener(this);
-        cardThanhToan.setOnClickListener(this);
-
-//        cardDichVu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showToast("dv");
-//                Log.d(TAG, "onClick: ");
-//                Toast.makeText(getActivity(),"dv", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        cardLienHe.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showToast("lh");
-//                Toast.makeText(getActivity(),"lh", Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//        cardLichSu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showToast("ls");
-//            }
-//        });
-//        cardThanhToan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showToast("TT");
-//            }
-//        });
-
+        cardThoat.setOnClickListener(this);
 
         return view;
     }
 
-//    private void showToast(String msg) {
-//        Toast.makeText(getActivity(), "msg", Toast.LENGTH_SHORT).show();
-//    }
 
     @Override
     public void onClick(View v) {
@@ -90,8 +58,8 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
                 replaceFragment(fragment);
                 break;
 
-            case R.id.cardLienHe:
-                fragment = new LienHeFragment();
+            case R.id.cardLichHen:
+                fragment = new XemLichHenFragment();
                 replaceFragment(fragment);
                 break;
 
@@ -100,9 +68,11 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
                 replaceFragment(fragment);
                 break;
 
-            case R.id.cardThanhToan:
-                fragment = new ThanhToanFragment();
-                replaceFragment(fragment);
+            case R.id.cardThoat:
+                Intent home = new Intent(getActivity(), SignInActivity.class);
+                startActivity(home);
+                Common.clear();
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
                 break;
 
         }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".fragment.LienHeFragment">
+    tools:context=".fragment.XemLichHenFragment">
 
     <TextView
         android:id="@+id/tvTitleLienHe"
@@ -12,31 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:text="Liên hệ"
+        android:text="Lịch hẹn của bạn"
         android:textColor="@android:color/background_dark"
         android:textSize="28sp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/llTimKiem"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLichHen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:gravity="right|center_vertical">
-
-        <EditText
-            android:id="@+id/etTimKiem"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:hint="Nhập tin nhắn        " />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_send" />
-
-    </LinearLayout>
+        android:layout_below="@id/tvTitleLienHe"
+        android:layout_marginTop="10dp"/>
 
 
 </RelativeLayout>

@@ -6,7 +6,7 @@
         android:title="@string/trang_chu" />
     <item
         android:id="@+id/dat_lich"
-        android:icon="@drawable/ic_calendar"
+        android:icon="@drawable/ic_calendar_brown"
         android:title="@string/dat_lich" />
     <item
         android:id="@+id/ho_so"

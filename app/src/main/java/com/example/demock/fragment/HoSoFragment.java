@@ -43,10 +43,19 @@ public class HoSoFragment extends Fragment implements View.OnClickListener {
         tvDiaChi = view.findViewById(R.id.tvDiaChi);
 
         //Gán các giá trị mặc định
-        tvHoTen.setText(Common.currentUser.getName());
-        tvNgaySinh.setText(Common.currentUser.getBirthday());
-        tvGioiTinh.setText(Common.currentUser.getGender());
-        tvDiaChi.setText(Common.currentUser.getAddress());
+        if(!Common.currentUser.getName().equals(""))
+            tvHoTen.setText(Common.currentUser.getName());
+        if(!Common.currentUser.getBirthday().equals(""))
+            tvNgaySinh.setText(Common.currentUser.getBirthday());
+        if(!Common.currentUser.getGender().equals(""))
+            tvGioiTinh.setText(Common.currentUser.getGender());
+        try {
+            if(!Common.currentUser.getAddr().equals(""))
+                tvDiaChi.setText(Common.currentUser.getAddr());
+        }
+        catch (Exception e){
+
+        }
 
         return view;
     }
@@ -68,6 +77,7 @@ public class HoSoFragment extends Fragment implements View.OnClickListener {
                 Intent home = new Intent(getActivity(), SignInActivity.class);
                 startActivity(home);
                 ((Activity) getActivity()).overridePendingTransition(0, 0);
+                Common.clear();
                 break;
             default:
                 break;
