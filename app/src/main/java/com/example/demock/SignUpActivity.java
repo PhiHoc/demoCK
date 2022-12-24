@@ -116,13 +116,13 @@ public class SignUpActivity extends AppCompatActivity {
                         selectedRadioButton  = (RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
                         //get gender text
                         String gender = selectedRadioButton.getText().toString();
-                        User user = new User(name,password,gender,addr,"false",bday);
+                        User user = new User(name,password,gender,addr,"false",bday,phone);
                         table_user.child(phone).setValue(user, new DatabaseReference.CompletionListener() {
                             @Override
                             public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
                                 Toast.makeText(SignUpActivity.this,"Đăng kí thành công!",Toast.LENGTH_SHORT).show();
                                 Common.currentUser = user;
-                                Common.currentUserPhone = phone;
+                                Common.currentPhone = phone;
                                 Intent home = new Intent(SignUpActivity.this,MainActivity.class);
                                 startActivity(home);
                                 finish();

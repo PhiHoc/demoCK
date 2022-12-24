@@ -86,7 +86,7 @@ public class XemLichHenFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 LichHen lichHen = snapshot.getValue(LichHen.class);
-                if (lichHen != null && lichHen.getSdt().equals(Common.currentUserPhone)) {
+                if (lichHen != null && lichHen.getSdt().equals(Common.currentUser.getPhone())) {
                     mListLichHen.add(lichHen);
                     mLichHenAdapter.notifyDataSetChanged();
                 }

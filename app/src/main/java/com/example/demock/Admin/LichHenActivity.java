@@ -77,7 +77,7 @@ public class LichHenActivity extends AppCompatActivity {
     }
 
     private void initUi() {
-        etSdt = findViewById(R.id.etId);
+        etSdt = findViewById(R.id.etSdt);
         etTen = findViewById(R.id.etTen);
         etLichHen = findViewById(R.id.etLichHen);
         btnThemLichHen = findViewById(R.id.btnThemLichHen);

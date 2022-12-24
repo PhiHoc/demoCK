@@ -88,7 +88,7 @@ public class DatLichFragment extends Fragment {
                 }
                 else{
                     String gio = "";
-                    String sdt = Common.currentUserPhone;
+                    String sdt = Common.currentUser.getPhone();
                     String ten = Common.currentUser.getName();
                     for (int i=0; i<cgGio.getChildCount();i++){
                         Chip chip = (Chip)cgGio.getChildAt(i);

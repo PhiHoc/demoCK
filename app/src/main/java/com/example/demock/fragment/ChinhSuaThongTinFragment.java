@@ -97,7 +97,7 @@ public class ChinhSuaThongTinFragment extends Fragment {
                 gender = femaleRadioButton.getText().toString();
             }
             //get gender text
-            userdatabase = FirebaseDatabase.getInstance().getReference("User").child(Common.currentUserPhone);
+            userdatabase = FirebaseDatabase.getInstance().getReference("User").child(Common.currentUser.getPhone());
             userdatabase.child("name").setValue(hoTen);
             userdatabase.child("address").setValue(diachi);
             userdatabase.child("birthday").setValue(ngaysinh);

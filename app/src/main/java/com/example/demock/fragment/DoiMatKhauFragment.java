@@ -76,7 +76,7 @@ public class DoiMatKhauFragment extends Fragment {
         }
         else {
             mDatabase = FirebaseDatabase.getInstance().getReference("User");
-            mDatabase.child(Common.currentUserPhone).child("password").setValue(mkmoi);
+            mDatabase.child(Common.currentUser.getPhone()).child("password").setValue(mkmoi);
             Toast.makeText(getActivity(),"Đổi mật khẩu thành công",Toast.LENGTH_SHORT).show();
 
             //Quay lại trang hồ sơ

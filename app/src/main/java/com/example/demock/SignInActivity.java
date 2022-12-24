@@ -82,7 +82,7 @@ public class SignInActivity extends AppCompatActivity {
                                 if (user.getPassword().equals(password)) {
                                     Toast.makeText(SignInActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
                                     Common.currentUser = user;
-                                    Common.currentUserPhone = phone;
+                                    Common.currentPhone = phone;
 
                                     //Kiểm tra có phải admin hay không
                                     if(user.getIsAdmin().equals("true")){

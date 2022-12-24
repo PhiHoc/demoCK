@@ -23,7 +23,6 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
 
     CardView cardDichVu;
     CardView cardLichHen;
-    CardView cardLichSu;
     CardView cardThoat;
     private TextView tvName;
 
@@ -35,14 +34,12 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
         //Khởi tạo các giá trị
         cardDichVu = (CardView) view.findViewById(R.id.cardDichVu);
         cardLichHen = (CardView) view.findViewById(R.id.cardLichHen);
-        cardLichSu = (CardView) view.findViewById(R.id.cardLichSu);
         cardThoat = (CardView) view.findViewById(R.id.cardThoat);
         tvName = view.findViewById(R.id.tvName);
         tvName.setText(Common.currentUser.getName());
 
         cardDichVu.setOnClickListener(this);
         cardLichHen.setOnClickListener(this);
-        cardLichSu.setOnClickListener(this);
         cardThoat.setOnClickListener(this);
 
         return view;
@@ -52,6 +49,8 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         Fragment fragment = null;
+        Intent intent;
+
         switch (v.getId()) {
             case R.id.cardDichVu:
                 fragment = new DichVuFragment();
@@ -60,11 +59,6 @@ public class TrangChuFragment extends Fragment implements View.OnClickListener{
 
             case R.id.cardLichHen:
                 fragment = new XemLichHenFragment();
-                replaceFragment(fragment);
-                break;
-
-            case R.id.cardLichSu:
-                fragment = new LichSuFragment();
                 replaceFragment(fragment);
                 break;
 
